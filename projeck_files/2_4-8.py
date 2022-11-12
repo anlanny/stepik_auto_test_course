@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from project_selenium import calc, alert_cod
+from project_selenium import calc, alert_print_cod
 
 
 def main():
@@ -18,7 +18,7 @@ def main():
         x = browser.find_element(By.ID, 'input_value').text
         browser.find_element(By.ID, 'answer').send_keys(calc(x))
         browser.find_element(By.ID, 'solve').click()
-        alert_cod(browser)
+        alert_print_cod(browser)
 
     finally:
         browser.quit()
